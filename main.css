@@ -1,0 +1,192 @@
+/* * {
+    border: 1px solid red;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Itim&family=Oswald:wght@200..700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Itim&family=Oswald:wght@200..700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #000;
+    --second-color: #afafaf;
+    --third-color: #ffffff;
+    --font-weight: 700;
+    --main-font-family: "Hubot Sans", sans-serif;
+    --margin: 20px;
+}
+
+html {
+    height: 100%;
+}
+
+.page {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+input[type='checkbox'] {
+    height: 20px;
+    width: 20px;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    left: 200px;
+}
+
+.theme-switch {
+    position: absolute;
+    top: 22px;
+    left: 230px;
+    font-size: 20px;
+    white-space: nowrap;
+    color: var(--main-color);
+}
+
+#theme-toggle:checked ~ * {
+    --main-color: #ffffff;
+    --second-color: #070606bc;
+    --third-color:#acacac;
+}
+
+.container {
+    background-color: var(--third-color);
+    --grid-gap: 15px;
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "sidebar content content"
+    "sidebar content content"
+    "footer footer footer";
+    font-family: var(--main-font-family);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 6vh 1fr 1fr 6vh;
+    gap: var(--grid-gap);
+    height: 100vh;
+}   
+
+.header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--main-color);
+    background-color: var(--second-color);
+    grid-area: header;
+    border-bottom: 1px solid var(--main-color);
+}
+
+.header-logo {
+    --font-family: "Faculty Glyphic", sans-serif;
+    --font-size: 35px;
+    --margin: 0;
+    margin: var(--margin);
+    margin-left: 20px;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+}
+
+.sidebar {
+    --font-size: 20px;
+    text-align: center;
+    color: var(--main-color);
+    font-size: var(--font-size);
+    background-color: var(--second-color);
+    border: 1px solid var(--main-color);
+    grid-area: sidebar;
+    margin-left: 10px;
+}
+
+.sidebar-zagolovok {
+    --font-size: 35px;
+    font-size: var(--font-size);
+}
+
+.sidebar-spisok {
+    --padding: 0;
+    list-style: none;
+    list-style-position: outside;
+    padding: var(--padding);
+}
+
+.sidebar-element-spiska {
+    --margin: 15px 20px;
+    margin: var(--margin);
+    padding: 10px 0px;
+    border: 1px solid var(--main-color);
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border: 1px solid var(--main-color);
+}
+
+.content {
+    --margin:10px;
+    min-width: 550px;
+    text-align: center;
+    color: var(--main-color);
+    font-size: large;
+    background-color: var(--second-color);
+    border: 1px solid var(--main-color);
+    grid-area: content;
+    margin-right: var(--margin);
+}
+
+.grid {
+    --gapznach: 10px;
+    --margin: 25px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    min-width: 500px;
+    gap: var(--gapznach);
+    margin: var(--margin);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: var(--main-color);
+    border-top: 1px solid var(--main-color);
+    background-color: var(--second-color);
+    grid-area: footer;
+}
+
+.foot {
+    --font-family: "Faculty Glyphic", sans-serif;
+    --font-size: 35px;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+}
+
+.social {
+    --font-family: "Faculty Glyphic", sans-serif;
+    --font-size: 35px;
+    --margin: 0 20px;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    margin: var(--margin);
+    
+}
+
+.social:link {
+    color: var(--main-color);
+}
+
+.social:visited {
+    color: var(--main-color);
+}
